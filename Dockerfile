@@ -48,7 +48,7 @@ RUN wget -qO- https://github.com/JimmyBryant/revive-adserver-installed/archive/v
     && chmod -R a+w /data/www/plugins \
     && chmod -R a+w /data/www/www/admin/plugins \
     && chmod -R a+w /data/www/www/images \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
     && chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 80 443
