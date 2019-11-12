@@ -39,11 +39,10 @@ COPY docker-entrypoint.sh /usr/local/bin/
 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
-RUN addgroup -S  www &&  adduser -D -h /data/www -S www -G www \
-    && mkdir -p /run/nginx
+RUN  mkdir -p /run/nginx
 
 RUN wget -qO- https://github.com/JimmyBryant/revive-adserver-installed/archive/v5.0.0.tar.gz | tar xz --strip 1 \
-    && chown -R www:www . \
+    && chown -R nobody:nobody . \
     && chmod -R a+w /data/www/var \
     && chmod -R a+w /data/www/plugins \
     && chmod -R a+w /data/www/www/admin/plugins \
